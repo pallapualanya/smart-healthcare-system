@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Smart Healthcare Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Smart Healthcare System</h1>
+    <p class="subtitle">Real-time patient monitoring dashboard</p>
+  </header>
+
+  <main>
+    <section class="patient-card">
+      <h2 id="patient-id">Patient: —</h2>
+      <span id="anomaly-badge" class="badge normal">Normal</span>
+    </section>
+
+    <section class="vitals-grid" id="vitals-grid">
+      <!-- vital cards injected by script.js -->
+    </section>
+
+    <section class="log">
+      <h3>Activity Log</h3>
+      <ul id="log-list"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

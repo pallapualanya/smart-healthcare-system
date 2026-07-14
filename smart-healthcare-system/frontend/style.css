@@ -1,0 +1,118 @@
+:root {
+  --bg: #f4f7fb;
+  --card-bg: #ffffff;
+  --primary: #2563eb;
+  --danger: #dc2626;
+  --safe: #16a34a;
+  --text: #1e293b;
+  --muted: #64748b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  background: var(--primary);
+  color: white;
+  padding: 24px 32px;
+}
+
+header h1 { margin: 0; font-size: 1.6rem; }
+.subtitle { margin: 4px 0 0; opacity: 0.85; font-size: 0.95rem; }
+
+main {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.patient-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.badge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.badge.normal { background: #dcfce7; color: var(--safe); }
+.badge.anomaly { background: #fee2e2; color: var(--danger); }
+
+.vitals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.vital-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  border-left: 4px solid var(--primary);
+}
+
+.vital-card.flagged { border-left-color: var(--danger); }
+
+.vital-card h4 {
+  margin: 0 0 8px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.vital-card .value {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.vital-card .forecast {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.log {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.log h3 { margin-top: 0; font-size: 1rem; }
+
+#log-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 220px;
+  overflow-y: auto;
+  font-size: 0.85rem;
+}
+
+#log-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eef2f7;
+  color: var(--muted);
+}
+
+#log-list li.anomaly-entry {
+  color: var(--danger);
+  font-weight: 600;
+}
